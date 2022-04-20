@@ -19,7 +19,7 @@ void plot_bullet_positions(int v) { //v for velocity
         double actual_time = t; //our time is measured in 0.01 of a sec
         double h_distance = v * actual_time;
         double v_distance = 0.5 * actual_time * actual_time * g;
-        double v_distance_to_travel = v_distance - v_distance_already_traveled;
+        double v_distance_to_travel = v_distance - v_distance_already_traveled - 1; //minus 1 becuase the cursor will move one line down for every loop, which is not needed
 
         //skip as many rows as determined by the vertical distance (y)
         //and print a line with the horizontal distance (x) represented by spaces
