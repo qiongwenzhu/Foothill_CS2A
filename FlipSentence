@@ -43,7 +43,7 @@ void horizontally_flip_text_with_in_given_range_inplace(string &s, size_t n, siz
         j--;
 
     }
-    
+  
 }
 
 int main()
@@ -78,7 +78,6 @@ int main()
     getline(cin, startPos);
     cout << "Please input the end index: " << endl;
     getline(cin, endPos);
-
 
     horizontally_flip_text_with_in_given_range_inplace(user_input, stoi(startPos), stoi(endPos));
     cout << "Reversed string inplace given the range " << "from index " << startPos << " to index " << endPos << ": " << user_input << endl;
