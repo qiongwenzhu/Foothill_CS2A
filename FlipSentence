@@ -1,0 +1,87 @@
+// Thursday_Lecture_April_21_2022.cpp : This file contains the 'main' function. 
+// Program execution begins and ends there.
+// Today we will experiment with branching statements and write a program that 
+// can flip a line of characters horizontally.
+
+#include <iostream>
+
+
+using namespace std; 
+
+// This function will flip a string horizontally and return a fliped string.
+string horizontally_flip_text(string s) {
+    string r(s.length(), 0);
+
+    for (size_t i = 0; i < s.length(); i++)
+        r[r.length() - i -1] = s[i];
+
+    return r;    
+}
+
+// This does the same as the previous function but it does it inplace.
+// Ignore the & infront of the s for now (pass by reference)
+void horizontally_flip_text_inplace(string &s) {
+    size_t i = 0, j = s.length() - 1;  //left and right cursors 
+    
+    while (i < j) {
+        swap(s[i], s[j]);
+        i++; 
+        j--;
+        
+    }
+}
+
+// Same as the previous function exept only reverses the portion of
+// the string between indexes n and m inclusive
+void horizontally_flip_text_with_in_given_range_inplace(string &s, size_t n, size_t m) {
+
+    size_t i = n, j = m;  //left and right cursors
+
+    while (i < j) {
+        swap(s[i], s[j]);
+        i++;
+        j--;
+
+    }
+    
+}
+
+int main()
+{
+    string user_input;
+    string startPos;
+    string endPos;
+    
+    // TODO: Prompt the user to enter a line of an English text and read it in.
+    cout << "Please type your sentence (to test the flip function): " << endl;
+    getline(cin, user_input);
+    //cin >> user_input;
+    cout << "Your input is: " << user_input << endl;
+
+    // TODO: Pass this line or text to our function which should return the flipped
+    // version and print it out.
+    cout << "Reversed string is: " << horizontally_flip_text(user_input) << endl;
+    
+    horizontally_flip_text_inplace(user_input);
+    cout << "Reversed string inplace: " << user_input << endl;
+
+    // Prompt the user to enter a line of an English text and read it in.
+    // version and print it out. This is to test the horizontally_flip_text_with_in_given_range_inplace() function
+    cout << endl;
+    cout << "Please type your sentence (flip the sentence given the range): " << endl;
+    getline(cin, user_input);
+
+    // TODO: Pass this line or text to our function which should return the flipped
+    // version given the range and print it out.
+
+    cout << "Please input the start index: " << endl;
+    getline(cin, startPos);
+    cout << "Please input the end index: " << endl;
+    getline(cin, endPos);
+
+
+    horizontally_flip_text_with_in_given_range_inplace(user_input, stoi(startPos), stoi(endPos));
+    cout << "Reversed string inplace given the range " << "from index " << startPos << " to index " << endPos << ": " << user_input << endl;
+
+    return 0; 
+}
