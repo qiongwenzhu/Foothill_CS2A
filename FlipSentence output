@@ -1,0 +1,16 @@
+C:\Users\qiong\CS2A\Flip\cmake-build-debug\Flip.exe
+Please type your sentence (to test the flip function):
+Hello World!
+Your input is: Hello World!
+Reversed string is: !dlroW olleH
+Reversed string inplace: !dlroW olleH
+
+Please type your sentence (flip the sentence given the range):
+Hello World!
+Please input the start index:
+2
+Please input the end index:
+6
+Reversed string inplace given the range from index 2 to index 6: HeW ollorld!
+
+Process finished with exit code 0
